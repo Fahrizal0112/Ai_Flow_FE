@@ -13,7 +13,7 @@ export function Sidebar() {
               Model AI
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="/datasets" className="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
               Dataset
             </a>
@@ -22,7 +22,7 @@ export function Sidebar() {
             <a href="/monitoring" className="flex items-center p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
               Monitoring
             </a>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </aside>

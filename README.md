@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Flow - Platform Pembuatan Model AI
 
-## Getting Started
+AI Flow adalah platform yang memungkinkan pengguna untuk membuat, melatih, dan mengelola model AI khususnya untuk analisis sentimen melalui antarmuka yang mudah digunakan.
 
-First, run the development server:
+## Fitur Utama
 
+- 🤖 **Pembuatan Model AI**
+  - Form yang user-friendly untuk membuat model baru
+  - Upload dataset dalam format CSV
+  - Konfigurasi model melalui prompt
+  - Monitoring proses training secara real-time
+
+- 📊 **Manajemen Model**
+  - Daftar semua model dengan status (completed, pending, failed)
+  - Filter model berdasarkan status
+  - Detail konfigurasi untuk setiap model
+  - Download model yang sudah selesai training
+
+- 🔮 **Prediksi Sentimen**
+  - Interface untuk testing model
+  - Support multiple input text
+  - Visualisasi hasil prediksi dengan progress bar
+  - Tingkat kepercayaan (confidence level) untuk setiap prediksi
+
+- 📈 **Monitoring**
+  - Log detail untuk setiap model
+  - Timeline proses training
+  - Metrik evaluasi model
+  - Status training real-time
+
+## Teknologi yang Digunakan
+
+### Frontend
+- Next.js 13+ (App Router)
+- TypeScript
+- Tailwind CSS
+- React Hooks
+- Client-side & Server-side Rendering
+
+### Backend
+- FastAPI
+- PostgreSQL
+- MLflow
+- Scikit-learn
+- Redis & Celery
+- Joblib
+
+## Cara Menjalankan Aplikasi
+
+1. Clone repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [repository-url]
+cd ai-flow
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies
+```bash
+npm install
+# atau
+yarn install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Jalankan development server
+```bash
+npm run dev
+# atau
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Buka [http://localhost:3000](http://localhost:3000) di browser
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## API Endpoints
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `POST /api/v1/models/` - Membuat model baru
+- `GET /api/v1/models/list` - Mendapatkan daftar model
+- `GET /api/v1/models/active` - Mendapatkan model yang sedang aktif
+- `GET /api/v1/models/monitoring/summary` - Mendapatkan ringkasan monitoring
+- `GET /api/v1/models/{id}/logs` - Mendapatkan log model
+- `POST /api/v1/models/{id}/predict` - Melakukan prediksi
+- `GET /api/v1/models/{id}/download` - Download model
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Penggunaan
 
-## Deploy on Vercel
+1. **Membuat Model Baru**
+   - Klik tombol "Buat Model Baru"
+   - Isi form dengan nama, deskripsi, dan prompt
+   - Upload dataset CSV
+   - Submit dan tunggu proses training
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Monitoring Model**
+   - Lihat daftar model di halaman utama
+   - Klik "Lihat Log" untuk detail training
+   - Monitor status dan progress training
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Testing Model**
+   - Pilih model yang sudah selesai training
+   - Klik "Coba Model"
+   - Masukkan teks yang ingin dianalisis
+   - Lihat hasil prediksi sentimen
+
+## Kontribusi
+
+Silakan berkontribusi dengan membuat pull request atau melaporkan issues.
+
+## Lisensi
+
+[Sesuaikan dengan lisensi yang digunakan]
